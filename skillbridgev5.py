@@ -272,15 +272,15 @@ if __name__ == "__main__":
 
     if not check_password():
      st.stop()
-    main()
     
 	        #----------------------Hide Streamlit footer----------------------------
     hide_st_style = """
 	<style>	
     	MainMenu {visibility: hidden;}
 		footer {visibility: hidden;}
-		#header {visibility: hidden;}
+		header {visibility: hidden;}
 	</style>
 		"""
     st.markdown(hide_st_style, unsafe_allow_html=True)
+    main()
 
