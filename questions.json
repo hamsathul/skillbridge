@@ -1,0 +1,554 @@
+{
+	"questions": [
+		{
+			"question": "Decision-Making Approach",
+			"options": [
+			  {"option": "Independently make decisions based on your judgment.", "value": "A"},
+			  {"option": "Seek input from colleagues before making a decision.", "value": "B"},
+			  {"option": "Prefer clear instructions and guidelines from a leader.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Leadership Style",
+			"options": [
+			  {"option": "Naturally take on a leadership role and delegate tasks.", "value": "A"},
+			  {"option": "Contribute ideas and follow the leader's instructions.", "value": "B"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "C"},
+			  {"option": "Work collaboratively with others without necessarily taking charge.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Risk-Taking Orientation",
+			"options": [
+			  {"option": "Take calculated risks and embrace innovation.", "value": "A"},
+			  {"option": "Prefer stability and avoid unnecessary risks.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Evaluate risks cautiously before deciding on a course of action.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Job Security Importance",
+			"options": [
+			  {"option": "Job security and stability for long-term commitment.", "value": "A"},
+			  {"option": "Pursuing varied experiences and challenges, even if it means less stability.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Work-Life Balance Prioritization",
+			"options": [
+			  {"option": "Prioritize achieving a balance between work and personal life.", "value": "A"},
+			  {"option": "Dedicate significant time and effort to career advancement.", "value": "B"},
+			  {"option": "Work effectively as part of a team without seeking a leading role.", "value": "C"},
+			  {"option": "Feel most comfortable working independently without extensive collaboration.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Long-Term Goals",
+			"options": [
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "A"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Prefer working independently but can also collaborate when required.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Preference for Stable Careers",
+			"options": [
+			  {"option": "Prefer a stable career with a consistent trajectory.", "value": "A"},
+			  {"option": "Adapt to changes but prefer a structured environment.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Workplace Collaboration Style",
+			"options": [
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "A"},
+			  {"option": "Work effectively as part of a team without seeking a leading role.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Feel most comfortable working independently without extensive collaboration.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Adaptability to Change",
+			"options": [
+			  {"option": "Quickly adapt to new circumstances and embrace change.", "value": "A"},
+			  {"option": "Find it challenging to adjust to rapid changes and prefer stability.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Collaborative Decision-Making",
+			"options": [
+			  {"option": "Collaborate with team members to collectively decide.", "value": "A"},
+			  {"option": "Prefer clear instructions and guidelines from a leader.", "value": "B"},
+			  {"option": "Take calculated risks and embrace innovation.", "value": "C"},
+			  {"option": "Evaluate risks cautiously before deciding on a course of action.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Initiative and Proactivity",
+			"options": [
+			  {"option": "Take initiative in seeking out opportunities for growth.", "value": "A"},
+			  {"option": "Prefer to focus on current responsibilities without actively seeking additional challenges.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Communication and Conflict Resolution",
+			"options": [
+			  {"option": "Skilled in effective communication and conflict resolution.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "C"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Flexibility and Adaptation",
+			"options": [
+			  {"option": "Adaptable and can quickly adjust to new circumstances.", "value": "A"},
+			  {"option": "Find it challenging to adjust to rapid changes and prefer stability.", "value": "B"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "C"},
+			  {"option": "Prefer clear instructions and guidelines from a leader.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Importance of Networking",
+			"options": [
+			  {"option": "Recognize the importance and utilization of networking.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than extensive networking.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Delegation and Team Building",
+			"options": [
+			  {"option": "Comfortable delegating tasks and building effective teams.", "value": "A"},
+			  {"option": "Prefer to complete tasks independently without extensive delegation.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Work collaboratively with others without necessarily taking charge.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Pressure",
+			"options": [
+			  {"option": "Thrive under pressure and see it as a challenge.", "value": "A"},
+			  {"option": "Prefer a stable routine and find pressure uncomfortable.", "value": "B"},
+			  {"option": "Take calculated risks and embrace innovation.", "value": "C"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Importance of Work Environment",
+			"options": [
+			  {"option": "Consider the work environment crucial for productivity and satisfaction.", "value": "A"},
+			  {"option": "Can adapt to various work environments without specific preferences.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Prefer clear instructions and guidelines from a leader.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Role in Team Projects",
+			"options": [
+			  {"option": "Naturally take on a leadership role and delegate tasks.", "value": "A"},
+			  {"option": "Contribute ideas and follow the leader's instructions.", "value": "B"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "C"},
+			  {"option": "Work collaboratively with others without necessarily taking charge.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Criticism",
+			"options": [
+			  {"option": "Take constructive criticism positively for personal and professional growth.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "C"},
+			  {"option": "Find it challenging to adjust to rapid changes and prefer stability.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Company Goals",
+			"options": [
+			  {"option": "Align personal goals with the company's broader objectives.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than company-wide goals.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Company Goals",
+			"options": [
+			  {"option": "Align personal goals with the company's broader objectives.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than company-wide goals.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Innovation",
+			"options": [
+			  {"option": "Actively seek and embrace innovative ideas.", "value": "A"},
+			  {"option": "Prefer sticking to established methods and avoid unnecessary risks.", "value": "B"},
+			  {"option": "Prefer a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Adapt to changes but prefer a structured environment.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Role in Decision-Making",
+			"options": [
+			  {"option": "Actively participate in decision-making processes.", "value": "A"},
+			  {"option": "Prefer to follow instructions and complete assigned tasks.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Evaluate risks cautiously before deciding on a course of action.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Challenges",
+			"options": [
+			  {"option": "View challenges as opportunities for growth.", "value": "A"},
+			  {"option": "Tend to avoid challenges to maintain a sense of security.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Communication Style",
+			"options": [
+			  {"option": "Open and proactive in communication.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Commitment to Career Growth",
+			"options": [
+			  {"option": "Actively seek opportunities for personal and professional growth.", "value": "A"},
+			  {"option": "Focus on current responsibilities without actively seeking additional challenges.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Preference in Work Environment",
+			"options": [
+			  {"option": "Prefer dynamic and fast-paced work environments.", "value": "A"},
+			  {"option": "Find comfort in stable and predictable work environments.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Work effectively as part of a team without seeking a leading role.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Team Building Approach",
+			"options": [
+			  {"option": "Actively participate in team-building activities.", "value": "A"},
+			  {"option": "Prefer to complete tasks independently without extensive delegation.", "value": "B"},
+			  {"option": "Prefer clear instructions and guidelines from a leader.", "value": "C"},
+			  {"option": "Work collaboratively with others without necessarily taking charge.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Feedback",
+			"options": [
+			  {"option": "Value constructive feedback for continuous improvement.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Role in Project Planning",
+			"options": [
+			  {"option": "Take the lead in planning and organizing projects.", "value": "A"},
+			  {"option": "Contribute ideas and follow the leader's instructions.", "value": "B"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "C"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "D"}
+			]
+		  },
+	  	{
+			"question": "Handling Workplace Conflicts",
+			"options": [
+			  {"option": "Address conflicts directly and seek resolution.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Adaptability to Technology",
+			"options": [
+			  {"option": "Embrace new technologies and tools for efficiency.", "value": "A"},
+			  {"option": "Prefer established tools and processes without significant changes.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Find it challenging to adjust to rapid changes and prefer stability.", "value": "D"}
+			]
+		  },		  
+		  {
+			"question": "Networking Orientation",
+			"options": [
+			  {"option": "Actively build and leverage professional networks.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than extensive networking.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Role in Company Vision",
+			"options": [
+			  {"option": "Align personal goals with the company's broader vision.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than company-wide goals.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Training and Development",
+			"options": [
+			  {"option": "Actively seek opportunities for continuous learning and development.", "value": "A"},
+			  {"option": "Focus on current responsibilities without actively seeking additional challenges.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Workload Pressure",
+			"options": [
+			  {"option": "Efficiently manage workload pressure and deadlines.", "value": "A"},
+			  {"option": "Prefer a stable routine and find pressure uncomfortable.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Success",
+			"options": [
+			  {"option": "Define success by personal and professional growth.", "value": "A"},
+			  {"option": "Prefer stability and a consistent career trajectory.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Importance of Company Culture",
+			"options": [
+			  {"option": "Recognize the impact of company culture on performance.", "value": "A"},
+			  {"option": "Adapt to various work environments without specific preferences.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Setbacks",
+			"options": [
+			  {"option": "View setbacks as opportunities for learning and improvement.", "value": "A"},
+			  {"option": "Find setbacks challenging and prefer a stable environment.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Project Ownership",
+			"options": [
+			  {"option": "Take ownership of projects and their successful completion.", "value": "A"},
+			  {"option": "Contribute ideas and follow the leader's instructions.", "value": "B"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "C"},
+			  {"option": "Work collaboratively with others without necessarily taking charge.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Professional Development Aspiration",
+			"options": [
+			  {"option": "Actively seek opportunities for professional development and advancement.", "value": "A"},
+			  {"option": "Focus on current responsibilities without actively seeking additional challenges.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Innovation and Creativity",
+			"options": [
+			  {"option": "Actively contribute innovative ideas and solutions.", "value": "A"},
+			  {"option": "Prefer to follow established methods and avoid unnecessary risks.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Team Challenges",
+			"options": [
+			  {"option": "Take on challenges as a team leader, guiding others.", "value": "A"},
+			  {"option": "Prefer to complete tasks independently without extensive delegation.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Adaptability to New Technologies",
+			"options": [
+			  {"option": "Embrace and adopt new technologies for efficiency.", "value": "A"},
+			  {"option": "Prefer established tools and processes without significant changes.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Work collaboratively with others without necessarily taking charge.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Feedback Reception",
+			"options": [
+			  {"option": "Appreciate and value constructive feedback for growth.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Personal Initiative in Career Growth",
+			"options": [
+			  {"option": "Proactively seek opportunities for personal and professional growth.", "value": "A"},
+			  {"option": "Focus on current responsibilities without actively seeking additional challenges.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Decision-Making Under Pressure",
+			"options": [
+			  {"option": "Efficiently make decisions under pressure and tight deadlines.", "value": "A"},
+			  {"option": "Prefer a stable routine and find pressure uncomfortable.", "value": "B"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Work-Life Integration",
+			"options": [
+			  {"option": "Integrate work and personal life to achieve balance.", "value": "A"},
+			  {"option": "Dedicate significant time and effort to career advancement.", "value": "B"},
+			  {"option": "Work effectively as part of a team without seeking a leading role.", "value": "C"},
+			  {"option": "Feel most comfortable working independently without extensive collaboration.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Role in Project Planning and Execution",
+			"options": [
+			  {"option": "Take the lead in planning and organizing projects.", "value": "A"},
+			  {"option": "Contribute ideas and follow the leader's instructions.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Importance of Work-Life Balance",
+			"options": [
+			  {"option": "Prioritize achieving a balance between work and personal life.", "value": "A"},
+			  {"option": "Dedicate significant time and effort to career advancement.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Role in Company Culture",
+			"options": [
+			  {"option": "Recognize the impact of company culture on performance.", "value": "A"},
+			  {"option": "Adapt to various work environments without specific preferences.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Professional Setbacks",
+			"options": [
+			  {"option": "View setbacks as opportunities for learning and improvement.", "value": "A"},
+			  {"option": "Find setbacks challenging and prefer a stable environment.", "value": "B"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "C"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Workload Peaks",
+			"options": [
+			  {"option": "Efficiently manage workload pressure and deadlines.", "value": "A"},
+			  {"option": "Prefer a stable routine and find pressure uncomfortable.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Networking Orientation",
+			"options": [
+			  {"option": "Actively build and leverage professional networks.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than extensive networking.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Commitment to Team Success",
+			"options": [
+			  {"option": "Actively contribute to the success of the team.", "value": "A"},
+			  {"option": "Prefer to complete tasks independently without extensive delegation.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Approach to Employee Training",
+			"options": [
+			  {"option": "Actively seek opportunities for continuous learning and development.", "value": "A"},
+			  {"option": "Focus on current responsibilities without actively seeking additional challenges.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Embrace flexibility and adjust goals based on evolving circumstances.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Team Collaboration Style",
+			"options": [
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "A"},
+			  {"option": "Work effectively as part of a team without seeking a leading role.", "value": "B"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Importance of Employee Well-being",
+			"options": [
+			  {"option": "Consider employee well-being crucial for productivity and satisfaction.", "value": "A"},
+			  {"option": "Focus on individual contributions rather than employee satisfaction.", "value": "B"},
+			  {"option": "Have clear, long-term goals and a strategic plan.", "value": "C"},
+			  {"option": "Prefer consistent employment and a predictable career path.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Leadership in Times of Change",
+			"options": [
+			  {"option": "Lead confidently during times of change and uncertainty.", "value": "A"},
+			  {"option": "Find it challenging to adjust to rapid changes and prefer stability.", "value": "B"},
+			  {"option": "Focus on short-term objectives and adapt as needed.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Handling Workplace Conflicts",
+			"options": [
+			  {"option": "Address conflicts directly and seek resolution.", "value": "A"},
+			  {"option": "Prefer to avoid conflicts and maintain a harmonious work environment.", "value": "B"},
+			  {"option": "Thrive in collaborative environments and actively contribute.", "value": "C"},
+			  {"option": "Independently make decisions based on your judgment.", "value": "D"}
+			]
+		  },
+		  {
+			"question": "Importance of Continuous Improvement",
+			"options": [
+			  {"option": "Value continuous improvement and seek ways to enhance processes.", "value": "A"},
+			  {"option": "Prefer stability and avoid unnecessary changes.", "value": "B"},
+			  {"option": "Strive for a stable routine with a clear boundary between work and personal life.", "value": "C"},
+			  {"option": "Collaborate with team members to collectively decide.", "value": "D"}
+			]
+		  }
+	]
+}
+  
