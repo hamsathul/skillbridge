@@ -8,6 +8,11 @@ from dotenv import find_dotenv, load_dotenv
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 from langchain.callbacks.base import BaseCallbackHandler
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain.chains import SimpleSequentialChain
+from langchain.schema import StrOutputParser
+from langchain.callbacks import StreamlitCallbackHandler
 import time
 import hmac
 
@@ -63,32 +68,12 @@ def num_tokens_from_string(string: str) -> int:
     num_tokens = len(encoding.encode(string))
     return num_tokens
 
-
-class TokenPrintHandler(BaseCallbackHandler):
-    def __init__(self):
-        super().__init__()
-        self.tokens_buffer = []
-
-    def on_llm_new_token(self, token: str, **kwargs) -> None:
-        # Accumulate tokens in the buffer
-        self.tokens_buffer.append(token)
-
-        # Check if the buffer contains a new line or reaches a certain size
-        if '\n' in token or len(self.tokens_buffer) > 40:
-            # Format and print the buffered tokens
-            formatted_tokens = ''.join(self.tokens_buffer)
-            st.write(formatted_tokens)
-            # Reset the buffer
-            self.tokens_buffer = []
-
-
-client = OpenAI()
-llm = ChatOpenAI(max_tokens=1000, streaming=True, callbacks=[TokenPrintHandler()])
 # Function to load questions
 def load_questions(filename='questions.json'):
     with open(filename, 'r') as file:
         data = json.load(file)
     return data['questions']
+
 
 # Function to initialize session state
 def initialize_session_state():
@@ -100,61 +85,51 @@ def initialize_session_state():
         st.session_state.selected_options = []
     if 'conversation_history' not in st.session_state:
         st.session_state.conversation_history = []
-    # if 'logged_in' not in st.session_state:
-    #     st.session_state.logged_in = True
-
-# Function to ask a question
-# def ask_question(question, options):
-#     prompt = f"{question}\nOptions:\n(A) {options[0]['option']}\n(B) {options[1]['option']}\n(C) {options[2]['option']}\n(D) {options[3]['option']}\nYour response: "
-
-#     response_content = client.chat.completions.create(
-#         model="text-davinci-002",
-#         prompt=prompt,
-#         temperature=0.7,
-#         max_tokens=150
-#     )['choices'][0]['text']
-#     print(response_content)
-#     return {'role': 'user', 'content': response_content}
 
 
-# Function to summarize conversation history
-def summarize_conversation_history(conversation_history):
+
+class TokenPrintHandler(BaseCallbackHandler):
+    def __init__(self):
+        super().__init__()
+        self.tokens_buffer = []
+
+    def on_llm_new_token(self, token: str, **kwargs) -> None:
+        # Accumulate tokens in the buffer
+        self.tokens_buffer.append(token)
+
+        # Check if the buffer contains a new line or reaches a certain size
+        if '\n' in token or len(self.tokens_buffer) > 70:
+            # Format and print the buffered tokens
+            formatted_tokens = ''.join(self.tokens_buffer)
+            st.markdown(formatted_tokens)
+            # Reset the buffer
+            self.tokens_buffer = []
+
+def summarize(conversation_history):
+    llm = ChatOpenAI(max_tokens=300, streaming=True)
     if not conversation_history:
-        return "No conversation history available."
-
+        return "no conversation history"
+    # st.subheader("Assessment Summary")
     human_messages = "\n".join([message['content'] for message in conversation_history])
-
-    template = "You are a very skilled assesment counselor. you will asses the data provided and suggest\
-    skillbridge boot camp if the person has a higher enterpreuner score or you will suggest \
-        ignite platform for projects, internships and career guidance.\
-    . you will strictly follow the below mentioned format for the assesment report step by step\
-   1. You will summarize the responses that the user has given for the questions in five bullet points\
-    2. you will asses if this person has an enterpreuner mindset or employee mindset from the data provided. \
-    3. you will provide a  percentage score for the persons employee mindset and enterpreuner mindset in bold format\
-    4. if the person has a higher enterpreuner mindest score percentage you will recommend SKILLBRIDGE to join the boot camp on enterpreunership \
-    5. if the person has a higher employee mindet score percentage you will recommend ignite platform for projects and internships \
-    "
-    messages = [
-    	SystemMessage(
-            content=template),
-    	HumanMessage(
-            content=human_messages ),
-	]
-    final_token_sent = num_tokens_from_string(human_messages) + num_tokens_from_string(template)
-    final_token_sent_amt = 0.0030 * final_token_sent / 1000 * 85
-    print(f'token sent: {final_token_sent} \nsent amount: INR{final_token_sent_amt}\n')
-    summary = llm(messages)
-    return summary.content
-
-# Function to score the response
-def score_response(selected_options):
-    scoring = {'A': (100, 0), 'B': (75, 25), 'C': (25, 75), 'D': (0, 100)}
-    
-    # Calculate scores based on the distribution of options
-    total_entrepreneur_score = sum(scoring[option][0] for option in selected_options)
-    total_employee_score = sum(scoring[option][1] for option in selected_options)
-
-    return total_entrepreneur_score, total_employee_score
+    system_prompt = PromptTemplate(input_variables=["human_messages"],template = ("You are a very skilled assesment counselor. you will asses the data provided in \
+    {human_messages}\
+    you will strictly follow the below mentioned format for the assesment report step by step. please provide a well formatted text in markdown for each sections\
+    name each sections appropriatly in bold.\
+   1. in this section You will summarize the responses that the user has given for the questions in five bullet points not exceeding 10 words\
+    2. in this section you will asses if this person has an enterpreuner mindset or employee mindset from the data provided. be brief and concise not exceeding 50 words \
+    3. in this section you will provide a  percentage score for the persons employee mindset and enterpreuner mindset in bold format\ """))
+    bullet_chain = LLMChain(llm=llm, prompt=system_prompt, verbose=False)
+    bullet_points = bullet_chain.run(human_messages, callbacks=[StreamlitCallbackHandler(st.container())])
+	
+    score_prompt = PromptTemplate(input_variables=["bullet_points"], template=("""you are an expert in mindset assesment and career counselling.\
+    the reccomendations should be given as a seperate section with bolded fonts. the reccomened programs should be bolded\
+	from the result of  the previous analysis provided in \
+	{bullet_points} \
+    if the person have a higher enterpreuner score reccomend the user to join skillbridge bootcamp for budding entrepreuners\
+    if the user have a higher employee score tell them about ignite projects and internships program.\
+    you should make any one reccomendation. do not repeat the analysis just make the reccomendations"""))
+    score_chain = LLMChain(llm=llm, prompt=score_prompt, verbose=False)
+    score_answer = score_chain.run(bullet_points, callbacks=[StreamlitCallbackHandler(st.container())])  
 
 # Function to display a question
 def display_question(question, options):
@@ -166,30 +141,6 @@ def display_question(question, options):
     # Display options on new lines
     options_text = "<br>".join([f"({option['value']}) {option['option']}" for option in options])
     st.write(options_text, unsafe_allow_html=True)
-
-# Function to display the assessment summary
-def display_summary(total_entrepreneur_score, total_employee_score, selected_options, conversation_history):
-    st.subheader("Assessment Summary")
-    final_token_recd = num_tokens_from_string(summarize_conversation_history(st.session_state.conversation_history))
-    recvd_amt = 0.0060 * final_token_recd / 1000 * 85
-    print(f'token received: {final_token_recd} \nsent amount: INR {recvd_amt}\n')
-    # st.write(f"Total Entrepreneur Score: {total_entrepreneur_score/10:.2f} out of 100")
-    # st.write(f"Total Employee Score: {total_employee_score/10:.2f} out of 100")
-
-    # st.subheader("Questions and Responses:")
-    # for i, entry in enumerate(conversation_history, start=1):
-    #     role = entry['role']
-    #     content = entry['content']
-
-    #     if role == 'user':
-    #         st.write(f"{i}. User: {content}")
-    #         st.write(f"   Selected Option: {selected_options[i-1]['content']}")
-    #     elif role == 'assistant':
-    #         st.write(f"{i}. Assistant: Option {content}")
-
-    # st.subheader("Conversation Summary")
-    # st.markdown(summary)
-
 
 def submit(response, current_question):
     
@@ -206,6 +157,11 @@ def submit(response, current_question):
 
         # Append user's response to selected_options
         st.session_state.selected_options.append(response.upper())
+    else:
+        warning_msg = st.warning("Please Enter only A, B, C, or D as options")
+        time.sleep(5)
+        warning_msg.empty()
+        
 
 def display_question_and_response():
     # Get the current question
@@ -233,8 +189,6 @@ def redirect_to_login():
 
     # Redirect to the login page
     st.session_state["page"] = "login"
-    # st.rerun()
-
 
 def main():
     check_login()
@@ -242,34 +196,23 @@ def main():
     st.button("Sign Out", on_click=redirect_to_login)
     with st.container():
         st.subheader("Entrepreneur vs Employee Mindset Assessment")
-    # if st.button("Sign Out", on_click=redirect_to_login):
-    #     redirect_to_login()
 
-
-    # if st.button("Sign Out"):
-    #  sign_out()
-    #  redirect_to_login()
-
-
-    # st.title("SKILLBRIDGE AI ASSESSMENTS")
-
-    # Check if all questions have been answered
-	
     if st.session_state.current_question_index < len(st.session_state.selected_questions):
         display_question_and_response()
     else:
         # Check if there are responses before displaying the summary
         if st.session_state.selected_options:
             # Display the assessment summary after the 10th question
-            total_entrepreneur_score, total_employee_score = score_response(st.session_state.selected_options)
-            display_summary(total_entrepreneur_score, total_employee_score, st.session_state.selected_options, st.session_state.conversation_history)
+            # total_entrepreneur_score, total_employee_score = score_response(st.session_state.selected_options)
+            
+             summarize(st.session_state.conversation_history)
+             st.container()
         else:
             st.warning("No responses recorded. Please answer the questions to generate a summary.")
 
 
 if __name__ == "__main__":
-
-
+    
     if not check_password():
      st.stop()
     
@@ -278,7 +221,7 @@ if __name__ == "__main__":
 	<style>	
     	MainMenu {visibility: hidden;}
 		footer {visibility: hidden;}
-		header {visibility: hidden;}
+		#header {visibility: hidden;}
 	</style>
 		"""
     st.markdown(hide_st_style, unsafe_allow_html=True)

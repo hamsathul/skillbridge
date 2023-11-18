@@ -4,6 +4,8 @@ __pycache__/
 *$py.class
 
 myenv/
+skillbridgecopy.py
+skillbridgev5_copy.py
 
 .streamlit/
 # C extensions
