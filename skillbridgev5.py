@@ -127,7 +127,7 @@ def summarize(conversation_history):
 	{bullet_points} \
     if the person have a higher enterpreuner score reccomend the user to join skillbridge bootcamp for budding entrepreuners\
     if the user have a higher employee score tell them about ignite projects and internships program.\
-    you should make any one reccomendation. do not repeat the analysis just make the reccomendations"""))
+    you should make any one reccomendation. do not repeat the analysis just make the reccomendations dont mention the reason for why the other program is not reccomended"""))
     score_chain = LLMChain(llm=llm, prompt=score_prompt, verbose=False)
     score_answer = score_chain.run(bullet_points, callbacks=[StreamlitCallbackHandler(st.container())])  
 
