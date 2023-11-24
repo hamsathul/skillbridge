@@ -16,8 +16,8 @@ from langchain.callbacks import StreamlitCallbackHandler
 import time
 import hmac
 
-
 load_dotenv(find_dotenv(), override=True)
+client = OpenAI()
 # Function to check if the user is logged in
 def check_login():
     if "logged_in" not in st.session_state or not st.session_state.logged_in:
@@ -87,49 +87,50 @@ def initialize_session_state():
         st.session_state.conversation_history = []
 
 
+import streamlit as st
 
-class TokenPrintHandler(BaseCallbackHandler):
-    def __init__(self):
-        super().__init__()
-        self.tokens_buffer = []
+# class TokenPrintHandler(BaseCallbackHandler):
+#     def __init__(self):
+#         super().__init__()
+#         self.tokens_buffer = []
+#     def on_llm_new_token(self, token: str, **kwargs) -> None:
+#         self.tokens_buffer.append(token)
+#         if '\n' in token or len(self.tokens_buffer) > 100:
+#             formatted_tokens = ''.join(self.tokens_buffer)
+#             with st.container():
+#                 st.markdown(formatted_tokens)
+#             self.tokens_buffer = []
 
-    def on_llm_new_token(self, token: str, **kwargs) -> None:
-        # Accumulate tokens in the buffer
-        self.tokens_buffer.append(token)
-
-        # Check if the buffer contains a new line or reaches a certain size
-        if '\n' in token or len(self.tokens_buffer) > 70:
-            # Format and print the buffered tokens
-            formatted_tokens = ''.join(self.tokens_buffer)
-            st.markdown(formatted_tokens)
-            # Reset the buffer
-            self.tokens_buffer = []
 
 def summarize(conversation_history):
-    llm = ChatOpenAI(max_tokens=300, streaming=True)
     if not conversation_history:
         return "no conversation history"
-    # st.subheader("Assessment Summary")
-    human_messages = "\n".join([message['content'] for message in conversation_history])
-    system_prompt = PromptTemplate(input_variables=["human_messages"],template = ("You are a very skilled assesment counselor. you will asses the data provided in \
-    {human_messages}\
-    you will strictly follow the below mentioned format for the assesment report step by step. please provide a well formatted text in markdown for each sections\
-    name each sections appropriatly in bold.\
-   1. in this section You will summarize the responses that the user has given for the questions in five bullet points not exceeding 10 words\
-    2. in this section you will asses if this person has an enterpreuner mindset or employee mindset from the data provided. be brief and concise not exceeding 50 words \
-    3. in this section you will provide a  percentage score for the persons employee mindset and enterpreuner mindset in bold format\ """))
-    bullet_chain = LLMChain(llm=llm, prompt=system_prompt, verbose=False)
-    bullet_points = bullet_chain.run(human_messages, callbacks=[StreamlitCallbackHandler(st.container())])
-	
-    score_prompt = PromptTemplate(input_variables=["bullet_points"], template=("""you are an expert in mindset assesment and career counselling.\
-    the reccomendations should be given as a seperate section with bolded fonts. the reccomened programs should be bolded\
-	from the result of  the previous analysis provided in \
-	{bullet_points} \
-    if the person have a higher enterpreuner score reccomend the user to join skillbridge bootcamp for budding entrepreuners\
-    if the user have a higher employee score tell them about ignite projects and internships program.\
-    you should make any one reccomendation. do not repeat the analysis just make the reccomendations dont mention the reason for why the other program is not reccomended"""))
-    score_chain = LLMChain(llm=llm, prompt=score_prompt, verbose=False)
-    score_answer = score_chain.run(bullet_points, callbacks=[StreamlitCallbackHandler(st.container())])  
+    with st.spinner('Skillbridge AI..Summarizing..Calculating..Recommending..🤖'):
+        human_messages = "\n".join([message['content'] for message in conversation_history])
+        system_prompt = """You are a very skilled assesment counselor.  you should strictly follow the report format as mentioned below. you can find the questions and responses from the user which is mentioned below.
+							{human_messages}\
+							you will strictly follow the below mentioned format for the assesment report step by step. please provide a well formatted text in markdown for each sections\
+							name each sections appropriatly in bold.\
+							1. in this section You will provide an assesment of the users responses for each question. all questions and responses have to be assesed. DO NOT mention the question itself. the assesment should be in bullet points in maximum 10 words.
+							2. in this section you will asses if this person has an enterpreuner mindset or employee mindset from the data provided. be brief but not exceeding 50 words.
+							3. in this section you will provide a  percentage score for both persons employee mindset and enterpreuner mindset in bold format.
+							please remember that the scores for both mindsets have to be given and the total of the scores should always be 100. 
+                            4. in this seciton you will make only one reccomendation and give a brief description about the program. if the user has a HIGHER ENTERPREUNER MINDSET SCORE you will reccomend skillbridge bootcamp for budding enterpreuners\
+                        	else you will reccomend ignite platform for projects, internships and career guidance."""
+        message_placeholder = st.empty()
+        bullet_points = ""
+        for response in client.chat.completions.create(
+			model="gpt-3.5-turbo",
+			messages=[
+				{"role": "system","content": system_prompt}
+			],
+			stream=True,
+			max_tokens=350
+		):
+            bullet_points += (response.choices[0].delta.content or "")
+            message_placeholder.markdown(bullet_points + "|")
+        message_placeholder.markdown(bullet_points)
+        
 
 # Function to display a question
 def display_question(question, options):
@@ -193,20 +194,30 @@ def redirect_to_login():
 def main():
     check_login()
     initialize_session_state()
-    st.button("Sign Out", on_click=redirect_to_login)
     with st.container():
-        st.subheader("Entrepreneur vs Employee Mindset Assessment")
-
+        st.markdown("<h1 style='text-align: center; background: linear-gradient(to bottom, #000099 0%, #6600ff 87%);'>SKILLBRIDGE AI ASSESMENT 🤖</h1>", unsafe_allow_html=True)
+        st.subheader("", divider='rainbow')
+    instructions ="""
+Instructions:    
+    - Questions have 4 options.
+    - Type the option you choose.
+    - Press submit for the next quesion.
+    - Answer all questions.
+    - AI will assess the responses.
+    - AI will provide a report.
+    - Signout by pressing the signout button.    
+For any queries contact the skillbridge team.
+"""
+    with st.sidebar:
+        with st.container():
+            st.code(instructions)
+        st.button("Sign Out", on_click=redirect_to_login)
     if st.session_state.current_question_index < len(st.session_state.selected_questions):
         display_question_and_response()
     else:
-        # Check if there are responses before displaying the summary
+        st.empty()
         if st.session_state.selected_options:
-            # Display the assessment summary after the 10th question
-            # total_entrepreneur_score, total_employee_score = score_response(st.session_state.selected_options)
-            
-             summarize(st.session_state.conversation_history)
-             st.container()
+            summarize(st.session_state.conversation_history)            
         else:
             st.warning("No responses recorded. Please answer the questions to generate a summary.")
 
